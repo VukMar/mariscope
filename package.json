@@ -8,7 +8,7 @@
     "test": "node CLI.js --d",
     "clean": "node CLI.js --cl"
   },
-  "keywords": [],
+  "keywords": ["mariscope", "PoB", "Discovery"],
   "author": "Vuk Maric",
   "license": "ISC",
   "dependencies": {

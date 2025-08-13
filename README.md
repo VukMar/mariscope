@@ -129,6 +129,7 @@ Set your Cloudinary config path (if you have a Cloudinary account and don’t wa
 ```bash
 node CLI.js --pobName "Your PoB Name" --clConfig "Your Cloudinary Config Path"
 ```
+
 ---
 
 ### **As a Library**
@@ -157,13 +158,13 @@ This example demonstrates how to use the `mariscope` library in a server-like lo
 
 #### Usage
 
-1. Make sure you have `mariscope` installed and a valid `config.json`:
+Make sure you have `mariscope` installed and a valid `config.json`:
 
 ```bash
 npm install mariscope
 ```
 
-2. Run the script:
+Run the script:
 
 ```bash
 node fetchMariscope.js
