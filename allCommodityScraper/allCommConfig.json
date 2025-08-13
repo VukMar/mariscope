@@ -1,0 +1,10 @@
+{
+  "targetUrl": "https://darkstat.dd84ai.com/dark.html",
+  "selectors": {
+    "commoditiesButton": "button.Commodities",
+    "tableTopMain": "#table-top-main"
+  },
+	"output": {
+		"commListJSON": "allCommodityScraper/commodity scraped content/commList.json"
+	}
+}
