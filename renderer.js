@@ -3,15 +3,38 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import { simplifyName } from './pobNameFix.js';
+import { logToConsole } from './consoleLogger.js';
 
 function escapeHtml(s) {
   return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+function dateToDiscoDate(config){
+
+  let now = new Date();
+
+  // Move current year 1190 years back
+  now.setFullYear(now.getFullYear() - 1190);
+
+  // Extract date components
+  let day = String(now.getDate()).padStart(2, '0');
+  let month = String(now.getMonth() + 1).padStart(2, '0');
+  let year = now.getFullYear();
+  let hours = String(now.getHours()).padStart(2, '0');
+  let minutes = String(now.getMinutes()).padStart(2, '0');
+  let seconds = String(now.getSeconds()).padStart(2, '0');
+
+  // Build formatted string
+  let formattedDate = `${day}.${month}.${year} A.S [${hours}:${minutes}:${seconds}]`;
+
+  return formattedDate;
+}
+
 export async function renderToImage(daxInfoText, config, opts = {}) {
   const width = opts.width || 1200;
   const padding = 32;
-
+  logToConsole(config, config);
+  
   // Ensure daxInfoText is safe for HTML and in string form
   function safeInfo(daxInfoText){
     let re = '<div class="commodity_container">\n';
@@ -120,7 +143,7 @@ export async function renderToImage(daxInfoText, config, opts = {}) {
   </head>
   <body>
     <div class="card" id="card">
-    <div class="header">Updated: ${new Date().toLocaleString()}</div>
+    <div class="header">Updated: ${ dateToDiscoDate(config)}</div>
     <div class="content">${safeInfo(daxInfoText,config)}</div>
     <div class="footer">Generated using:  <i class="mariscope">Mariscope</i></div>
     </div>

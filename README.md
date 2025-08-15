@@ -1,4 +1,4 @@
-# **Mariscope v0.5.0**
+# **Mariscope v0.5.11**
 
 Mariscope is a simple Node.js scraper and renderer tool made for the *Discovery Freelancer* MMO RP server community — and originally, just for me.
 Its main purpose is to generate up-to-date, visually appealing images of Player Owned Base (PoB) commodity data for use in the DiscoveryGC Forum’s Player Owned Base RP section.
