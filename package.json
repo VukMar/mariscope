@@ -1,6 +1,6 @@
 {
   "name": "mcr.scope",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "description": "Mariscope — CLI and backend-ready tool to scrape Player Owned Base commodity data for DiscoveryFL and render info as image using Puppeteer.",
   "type": "module",
   "main": "main.js",
