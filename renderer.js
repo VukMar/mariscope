@@ -124,7 +124,7 @@ export async function renderToImage(daxInfoText, config, opts = {}) {
          width: max-width;
          opacity:0.8;
       }
-      .mariscope{
+      .mcrscope{
          font-size: 35px;
       }
       .commodity_container {
@@ -145,7 +145,7 @@ export async function renderToImage(daxInfoText, config, opts = {}) {
     <div class="card" id="card">
     <div class="header">Updated: ${ dateToDiscoDate(config)}</div>
     <div class="content">${safeInfo(daxInfoText,config)}</div>
-    <div class="footer">Generated using:  <i class="mariscope">Mariscope</i></div>
+    <div class="footer">Generated using:  <i class="mcrscope">MCR.Scope</i></div>
     </div>
   </body>
   </html>`;
