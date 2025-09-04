@@ -5,6 +5,13 @@ import path from 'path';
 import { simplifyName } from './pobNameFix.js';
 import { logToConsole } from './consoleLogger.js';
 
+function getVersion(){
+  // Read and parse JSON
+  let data = fs.readFileSync('./package.json', 'utf-8');
+  let pack = JSON.parse(data);
+  return pack.version;
+}
+
 function escapeHtml(s) {
   return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
@@ -33,7 +40,6 @@ function dateToDiscoDate(config){
 export async function renderToImage(daxInfoText, config, opts = {}) {
   const width = opts.width || 1200;
   const padding = 32;
-  logToConsole(config, config);
   
   // Ensure daxInfoText is safe for HTML and in string form
   function safeInfo(daxInfoText){
@@ -145,7 +151,7 @@ export async function renderToImage(daxInfoText, config, opts = {}) {
     <div class="card" id="card">
     <div class="header">Updated: ${ dateToDiscoDate(config)}</div>
     <div class="content">${safeInfo(daxInfoText,config)}</div>
-    <div class="footer">Generated using:  <i class="mcrscope">MCR.Scope</i></div>
+    <div class="footer">Generated using:  <i class="mcrscope">MCR.Scope v${getVersion()}</i></div>
     </div>
   </body>
   </html>`;
